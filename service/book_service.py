@@ -10,8 +10,8 @@ def getAllBooks(db:Session):
    result = book_database.getAllBooks(db)
    return result
 
-def getBookById(id: str, db: Session):
-   result = book_database.getBookById(id, db)
+def getBookById(isbn: str, db: Session):
+   result = book_database.getBookById(isbn, db)
    return result
 
 def addBook(request: BookRequest, db: Session):

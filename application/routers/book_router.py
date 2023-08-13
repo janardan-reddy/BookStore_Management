@@ -16,9 +16,9 @@ def getAllBooks(db:Session= Depends(get_db)):
     result = book_service.getAllBooks(db)
     return result
 
-@router.get('/{id}', status_code=status.HTTP_200_OK, response_model=BookResponse)
-def getBookById(id: str, db:Session= Depends(get_db)):
-    result = book_service.getBookById(id, db)
+@router.get('/{isbn}', status_code=status.HTTP_200_OK, response_model=BookResponse)
+def getBookById(isbn: str, db:Session= Depends(get_db)):
+    result = book_service.getBookById(isbn, db)
     return result
 
 @router.post('/add', status_code=status.HTTP_200_OK, response_model= BookResponse)

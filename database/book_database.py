@@ -6,8 +6,8 @@ def getAllBooks(db):
     result= db.query(DBBook).all()
     return result
 
-def getBookById(id: str, db:Session):
-    result= db.query(DBBook).filter(DBBook.id == id).first()
+def getBookById(isbn: str, db:Session):
+    result= db.query(DBBook).filter(DBBook.isbn == isbn).first()
     if result != None:
         return result
     else:
